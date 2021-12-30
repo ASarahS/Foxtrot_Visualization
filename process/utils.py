@@ -6,13 +6,14 @@ from pathlib import Path
 from pyspark.sql import dataframe
 from pyspark.sql.session import SparkSession
 
+dirname, _ = os.path.split(os.path.abspath(__file__))
 
-data_dir = "../data/input/data/data_"
-analyzed_data_dir = "../data/input/analyzed_data/"
-characterization_dir = "../data/input/characterization/"
+data_dir = dirname + "/../data/input/data/data_"
+analyzed_data_dir = dirname + "/../data/input/analyzed_data/"
+characterization_dir = dirname + "/../data/input/characterization/"
 
-spark_dir = "../data/output/spark/"
-visualization_dir = "../data/output/visualization/"
+spark_dir = dirname + "/../data/output/spark/"
+visualization_dir = dirname + "/../data/output/visualization/"
 
 api_proportion_file = "api_proportion_"
 api_sets_file = "api_sets_"
@@ -30,7 +31,7 @@ apis = "apis"
 
 def read_csv(spark: SparkSession, file_path: str):
     """
-    Reads a CSV file with the path `file_path` into a dataframe 
+    Reads a CSV file with the path `file_path` into a dataframe
     using the spark session `spark`.
     """
     return spark.read.option("inferSchema", "true").option(
@@ -47,7 +48,7 @@ def write_csv(df: dataframe, folder_path: str):
 
 def copy_csv(input_folder: str, output_file_path: str):
     """
-    Copies the CSV file from the folder `input_folder` to the file with the 
+    Copies the CSV file from the folder `input_folder` to the file with the
     file path `output_file_path`.
     """
     Path(os.path.dirname(output_file_path)).mkdir(parents=True, exist_ok=True)
