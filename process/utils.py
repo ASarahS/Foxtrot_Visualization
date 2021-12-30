@@ -6,13 +6,14 @@ from pathlib import Path
 from pyspark.sql import dataframe
 from pyspark.sql.session import SparkSession
 
+dirname, _ = os.path.split(os.path.abspath(__file__))
 
-data_dir = "./data/input/data/data_"
-analyzed_data_dir = "./data/input/analyzed_data/"
-characterization_dir = "./data/input/characterization/"
+data_dir = dirname + "/../data/input/data/data_"
+analyzed_data_dir = dirname + "/../data/input/analyzed_data/"
+characterization_dir = dirname + "/../data/input/characterization/"
 
-spark_dir = "./data/output/spark/"
-visualization_dir = "./data/output/visualization/"
+spark_dir = dirname + "/../data/output/spark/"
+visualization_dir = dirname + "/../data/output/visualization/"
 
 api_proportion_file = "api_proportion_"
 api_sets_file = "api_sets_"
