@@ -31,9 +31,9 @@ How does your output differ ...? (What’s the significance of any differences o
 Running this process requires no specific hardware or OS.
 
 Software setup steps:
-0. (Optional but recommended) create and activate a Python virtual environment by running `python -m venv <dir>` and `source <dir>/bin/activate`.
-1. Install the Python requirements from the `requirements.txt` file by running `pip install -r requirements.txt`.
-2. Run `python process/repositories_visualizer.py` to see the results in `data/output/visualiation`
+1. (Optional but recommended) create and activate a Python virtual environment by running `python -m venv <dir>` and `source <dir>/bin/activate`.
+2. Install the Python requirements from the `requirements.txt` file by running `pip install -r requirements.txt`.
+3. Run `python process/repositories_visualizer.py` to see the results in `data/output/visualiation`
 
 Troubleshooting
 - It may be required to install Java 11 on your system. Newer versions are not supported by Apache Spark.
