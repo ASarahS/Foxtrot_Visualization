@@ -1,1 +1,4 @@
 .DS_Store
+process/__pycache__/*
+env/*
+data/output/spark/*
