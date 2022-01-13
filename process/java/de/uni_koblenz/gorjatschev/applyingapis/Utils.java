@@ -32,16 +32,16 @@ public class Utils {
 
     // Created and used CSV files in their creation order
     // Contains the names of the collected repositories
-    public static final String O_COLLECTED_REPOSITORIES_FILE = "output/repositories_collected.csv";
+    public static final String O_COLLECTED_REPOSITORIES_FILE = "data/output/repositories_collected.csv";
     // Contains the names and valid dependencies of the filtered collected
     // repositories
-    public static final String O_REPOSITORIES_WITH_DEPENDENCIES_FILE = "output/repositories_with_dependencies.csv";
+    public static final String O_REPOSITORIES_WITH_DEPENDENCIES_FILE = "data/output/repositories_with_dependencies.csv";
     // Contains groupId and artifactId of all declared valid dependencies
-    public static final String O_DEPENDENCIES_FILE = "output/dependencies.csv";
+    public static final String O_DEPENDENCIES_FILE = "data/output/dependencies.csv";
     // Contains groupId, artifactId, and mcrTags of the declared valid dependencies
-    public static final String O_DEPENDENCIES_WITH_TAGS_FILE = "output/dependencies_with_mcrTags.csv";
+    public static final String O_DEPENDENCIES_WITH_TAGS_FILE = "data/output/dependencies_with_mcrTags.csv";
     // Contains the names and mcrTags of the filtered collected repositories
-    public static final String O_REPOSITORIES_WITH_TAGS_FILE = "output/repositories_with_mcrTags.csv";
+    public static final String O_REPOSITORIES_WITH_TAGS_FILE = "data/output/repositories_with_mcrTags.csv";
 
     // Directory for the downloaded repositories
     public static final String T_GIT_FILES_DIR = "temp/git/";
@@ -217,30 +217,30 @@ public class Utils {
     /**
      * Gets the path of the dependencies file of the repository
      * {@code repositoryName} as a string:
-     * {@code output/dependencies/dependencies_[repositoryName].csv}
+     * {@code data/output/dependencies/dependencies_[repositoryName].csv}
      *
      * @param repositoryName
      * @return The path of the dependencies file as a string
      */
     public static String getDependenciesFile(String repositoryName) {
-        return "output/dependencies/dependencies_" + repositoryName.replace("/", "_") + ".csv";
+        return "data/output/dependencies/dependencies_" + repositoryName.replace("/", "_") + ".csv";
     }
 
     /**
      * Gets the path of the data file of the repository {@code repositoryName} as a
-     * string: {@code output/data/data_[repositoryName].csv}
+     * string: {@code data/output/data/data_[repositoryName].csv}
      *
      * @param repositoryName
      * @return The path of the data file as a string
      */
     public static String getDataFile(String repositoryName) {
-        return "output/data/data_" + repositoryName.replace("/", "_") + ".csv";
+        return "data/output/data/data_" + repositoryName.replace("/", "_") + ".csv";
     }
 
     /**
      * Gets the path of the selected repositories file as a string. Its name
      * consists of the dependencies from the list {@code dependencies}:
-     * {@code output/repositories_selected/[dependencies].csv}
+     * {@code data/output/repositories_selected/[dependencies].csv}
      *
      * @param dependencies
      * @return The path of the selected repositories file as a string
@@ -249,7 +249,7 @@ public class Utils {
         List<String> dependenciesList = new ArrayList<>();
         dependencies.forEach(dependency -> dependenciesList.add(dependency.replace(":", "_")));
         String dependenciesString = String.join("_", dependenciesList);
-        return "output/repositories_selected/" + dependenciesString + ".csv";
+        return "data/output/repositories_selected/" + dependenciesString + ".csv";
     }
 
 }
