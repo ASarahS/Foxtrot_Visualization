@@ -6,4 +6,4 @@ source ./env/bin/activate
 
 pip install -r requirements.txt
 
-python process/repositories_visualizer.py
+python process/python/repositories_visualizer.py
