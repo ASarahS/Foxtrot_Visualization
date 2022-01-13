@@ -2,3 +2,4 @@
 process/__pycache__/*
 env/*
 data/output/spark/*
+target/*
