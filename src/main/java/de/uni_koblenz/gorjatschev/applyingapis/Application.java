@@ -44,6 +44,7 @@ public class Application {
          * @throws InterruptedException
          */
         public static void main(String[] args) throws IllegalStateException, IOException, InterruptedException {
+                log.info("Starting...");
                 long startTime = System.currentTimeMillis();
                 // Collect all Java GitHub repositories that use Maven and meet the limit
                 // conditions
@@ -53,23 +54,29 @@ public class Application {
                 // Collect the dependencies of the collected repositories such that they
                 // can be used for a separate analysis of all dependencies
                 if (GET_DEPENDENCIES_OF_COLLECTED_REPOSITORIES) {
+                        System.out.println("dependencies");
                         RepositoriesPicker.getDependenciesOfCollectedRepositories();
                 }
                 // Collect the MCR tags of all used dependencies in the collected repositories
                 // and assign them to the repositories
                 if (GET_MCR_TAGS_OF_COLLECTED_REPOSITORIES) {
+                        System.out.println("mcr_tags");
                         RepositoriesPicker.getMcrTagsOfDependenciesOfCollectedRepositories();
                 }
                 // Select repositories out of the collected repositories based on their
                 // declared dependencies and the dependencies limit and files limit
                 if (SELECT_REPOSITORIES) {
+                        System.out.println("select");
+                        RepositoriesPicker.getMcrTagsOfDependenciesOfCollectedRepositories();
                         RepositoriesPicker.selectRepositories(DEPENDENCIES, DEPENDENCIES_LIMIT, FILES_LIMIT);
                 }
                 // Parse the selected repositories
                 if (PARSE_REPOSITORIES) {
+                        System.out.println("parse");
                         Utils.readCSVFile(Utils.getSelectedRepositoriesFile(DEPENDENCIES))
                                         .forEach(repository -> parse(repository));
                 }
+                System.out.println("Successful.");
                 log.info("Successful.");
                 long stopTime = System.currentTimeMillis();
                 Duration d = Duration.ofMillis(stopTime - startTime);

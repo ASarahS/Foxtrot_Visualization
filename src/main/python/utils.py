@@ -7,19 +7,23 @@ from pyspark.sql import dataframe
 from pyspark.sql.session import SparkSession
 
 dirname, _ = os.path.split(os.path.abspath(__file__))
+dirname = dirname.split("src")[0]
 
-data_dir = dirname + "/../data/input/data/data_"
-analyzed_data_dir = dirname + "/../data/input/analyzed_data/"
-characterization_dir = dirname + "/../data/input/characterization/"
+data_dir = dirname + "data/input/data/data_"
+analyzed_data_dir = dirname + "data/input/analyzed_data/"
+characterization_dir = dirname + "data/input/characterization/"
 
-spark_dir = dirname + "/../data/output/spark/"
-visualization_dir = dirname + "/../data/output/visualization/"
+spark_dir = dirname + "data/output/spark/"
+visualization_dir = dirname + "data/output/visualization/"
+
+repositories_selected_dir = dirname + "data/output/repositories_selected/"
 
 api_proportion_file = "api_proportion_"
 api_sets_file = "api_sets_"
 characterization_file = "characterization_"
 visualization_file = "visualization_"
 
+filePath = "filePath"
 packageName = "packageName"
 className = "className"
 methodName = "methodName"
@@ -27,6 +31,11 @@ api = "api"
 mcrCategories = "mcrCategories"
 mcrTags = "mcrTags"
 apis = "apis"
+
+isAPIClass = "isAPIClass"
+count = "count"
+countAll = "countAll"
+proportion = "proportion"
 
 
 def read_csv(spark: SparkSession, file_path: str):

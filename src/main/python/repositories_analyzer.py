@@ -63,7 +63,7 @@ def analyze_repository(repository: str, abstraction: str):
 
 def analyze(repositories_selected_file: str):
     """
-    Analyzes all repositories in the `repositories_selected_file` on all abstraction levels 
+    Analyzes all repositories in the `repositories_selected_file` on all abstraction levels
     ("package", "class", "method").
     """
     df = u.read_csv(spark, repositories_selected_file)
@@ -75,8 +75,8 @@ def analyze(repositories_selected_file: str):
 
 def count_pairs_in_abstraction_and_repo(repository: str, abstraction: str, dependency1: str, dependency2: str):
     """
-    Counts the occurrences of the dependencies `dependency1` and `dependency2` in the `repository` 
-    on the abstraction level `abstraction`. Returns a list that contains `repository`, 
+    Counts the occurrences of the dependencies `dependency1` and `dependency2` in the `repository`
+    on the abstraction level `abstraction`. Returns a list that contains `repository`,
     `count_dependency1`, `count_dependency2`, and `count_both`.
     """
     sets_file = u.analyzed_data_dir + abstraction + "/" + \
@@ -101,10 +101,10 @@ def count_pairs_in_abstraction_and_repo(repository: str, abstraction: str, depen
 
 def count_pairs_in_abstraction(abstraction: str, repositories_selected_file: str, dependency1: str, dependency2: str):
     """
-    Counts the occurrences of the dependencies `dependency1` and `dependency2` in all repositories 
-    contained in the `repositories_selected_file` on the abstraction level `abstraction`. Writes 
-    them in a CSV file. Returns a list that contains `abstraction`, 
-    `count_dependency1`, `count_dependency2`, and `count_both`. 
+    Counts the occurrences of the dependencies `dependency1` and `dependency2` in all repositories
+    contained in the `repositories_selected_file` on the abstraction level `abstraction`. Writes
+    them in a CSV file. Returns a list that contains `abstraction`,
+    `count_dependency1`, `count_dependency2`, and `count_both`.
     """
     counts = []
     df = u.read_csv(spark, repositories_selected_file)
@@ -136,7 +136,7 @@ def count_pairs_in_abstraction(abstraction: str, repositories_selected_file: str
 
 def count_pairs(repositories_selected_file: str, dependency1: str, dependency2: str):
     """
-    Counts the occurrences of the dependencies `dependency1` and `dependency2` in all repositories 
+    Counts the occurrences of the dependencies `dependency1` and `dependency2` in all repositories
     contained in the `repositories_selected_file` on all abstraction levels ("package", "class", "method").
     """
     all_counts = []
@@ -161,8 +161,8 @@ def count_pairs(repositories_selected_file: str, dependency1: str, dependency2: 
 
 def sample_abstractions(repositories: int, samples_in_repository: int, usage_limit: int, abstraction: str, dependency1: str, dependency2: str):
     """
-    Samples (number:)`repositories` repositories that have (number:)`usage_limit` abstractions of type `abstraction` 
-    that contain the dependencies `dependency1` and `dependency2`. From each repository (number:)`samples_in_repository` 
+    Samples (number:)`repositories` repositories that have (number:)`usage_limit` abstractions of type `abstraction`
+    that contain the dependencies `dependency1` and `dependency2`. From each repository (number:)`samples_in_repository`
     abstractions are sampled.
     """
     sample = []

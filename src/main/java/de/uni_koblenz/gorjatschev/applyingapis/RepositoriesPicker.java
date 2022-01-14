@@ -214,7 +214,7 @@ public class RepositoriesPicker {
     private static List<String> filterRepositories(int starsLimit, int contributorsLimit, int commitsLimit)
             throws IOException, InterruptedException {
         List<String> filteredRepositories = new ArrayList<>();
-        for (int page = 1; page <= 10; page++) {
+        for (int page = 1; page <= 1; page++) {
             String url = Utils.GITHUB_API_URL + "search/repositories?q=language:java+stars:%3E=" + starsLimit
                     + "&sort=stars&order=asc&per_page=100&page=" + page;
             JsonObject repositories = request(url).getAsJsonObject();
