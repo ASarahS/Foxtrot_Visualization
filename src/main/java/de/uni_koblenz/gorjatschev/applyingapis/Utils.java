@@ -234,7 +234,7 @@ public class Utils {
      * @return The path of the data file as a string
      */
     public static String getDataFile(String repositoryName) {
-        return "data/output/data/data_" + repositoryName.replace("/", "_") + ".csv";
+        return "data/input/data/data_" + repositoryName.replace("/", "_") + ".csv";
     }
 
     /**

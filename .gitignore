@@ -3,3 +3,5 @@ src/main/python/__pycache__/*
 env/*
 data/output/spark/*
 target/*
+temp/*
+log.log

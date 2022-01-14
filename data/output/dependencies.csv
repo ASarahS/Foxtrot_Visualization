@@ -1,0 +1,14 @@
+groupId,artifactId
+org.apache.lucene,lucene-core
+org.apache.opennlp,opennlp-tools
+ch.qos.logback,logback-classic
+org.apache.lucene,lucene-queryparser
+org.apache.commons,commons-lang3
+com.fasterxml.jackson.core,jackson-databind
+org.apache.httpcomponents,httpclient
+org.mockito,mockito-core
+junit,junit
+commons-io,commons-io
+commons-cli,commons-cli
+org.apache.lucene,lucene-analyzers-common
+org.slf4j,slf4j-api

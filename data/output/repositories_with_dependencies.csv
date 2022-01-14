@@ -1,0 +1,2 @@
+repositoryName,dependencies
+Novetta/CLAVIN,"[ch.qos.logback:logback-classic,com.fasterxml.jackson.core:jackson-databind,commons-cli:commons-cli,commons-io:commons-io,junit:junit,org.apache.commons:commons-lang3,org.apache.httpcomponents:httpclient,org.apache.lucene:lucene-analyzers-common,org.apache.lucene:lucene-core,org.apache.lucene:lucene-queryparser,org.apache.opennlp:opennlp-tools,org.mockito:mockito-core,org.slf4j:slf4j-api]"
