@@ -1,0 +1,4 @@
+abstraction,org.apache.lucene:lucene-analyzers-common,org.apache.lucene:lucene-core,both
+method,1,17,0
+class,1,6,0
+package,1,2,1

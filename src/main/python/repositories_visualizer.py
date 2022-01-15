@@ -1,3 +1,4 @@
+import sys
 import plotly.express as px
 import pyspark.sql.functions as F
 from pyspark import SparkContext
@@ -147,9 +148,7 @@ if __name__ == "__main__":
     dependence2tags = ["matching", "junit"]
     dependence3tags = ["analyzer", "indexing", "full-text"]
 
-    repositories = [
-        "Novetta/CLAVIN"
-    ]
+    repositories = sys.argv[1:]
 
     for repository in repositories:
         repository = repository.replace("/", "_")

@@ -1,0 +1,14 @@
+groupId,artifactId,mcrTags
+org.apache.lucene,lucene-core,"lucene,indexing,apache,full-text,index"
+org.mockito,mockito-core,"mock,mocking,testing"
+org.apache.opennlp,opennlp-tools,"nlp,tools,apache"
+ch.qos.logback,logback-classic,logging
+com.fasterxml.jackson.core,jackson-databind,"binding,json"
+org.slf4j,slf4j-api,"logging,api,slf4j"
+junit,junit,"testing,junit"
+org.apache.httpcomponents,httpclient,"apache,client,http"
+org.apache.commons,commons-lang3,"apache,commons"
+commons-cli,commons-cli,"command-line,cli,parser"
+org.apache.lucene,lucene-analyzers-common,"lucene,analyzer,apache,index"
+commons-io,commons-io,io
+org.apache.lucene,lucene-queryparser,"lucene,apache,index"
