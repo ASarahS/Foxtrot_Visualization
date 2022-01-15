@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 
 import pyspark.sql.functions as F
@@ -213,8 +214,9 @@ if __name__ == "__main__":
     sc = SparkContext("local", "applying-apis")
     spark = SparkSession(sc)
 
-    dependency1 = "org.apache.lucene:lucene-analyzers-common"
-    dependency2 = "org.apache.lucene:lucene-core"
+    dependency1 = sys.argv[1]
+    dependency2 = sys.argv[2]
+
     repositories_selected_file = u.repositories_selected_dir + \
         dependency1.replace(":", "_") + "_" + \
         dependency2.replace(":", "_") + ".csv"

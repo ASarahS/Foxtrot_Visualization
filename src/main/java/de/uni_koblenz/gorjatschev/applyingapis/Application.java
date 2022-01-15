@@ -26,13 +26,11 @@ public class Application {
         private static final boolean PARSE_REPOSITORIES = true;
         private static final boolean COLLECT_API_CATEGORIES = true;
         private static final boolean DOWNLOAD_JARS = true;
-        private static final int STARS_LIMIT = 100; // at least 100 stars
-        private static final int CONTRIBUTOR_LIMIT = 2; // at least 2 contributors
-        private static final int COMMITS_LIMIT = 100; // at least 100 commits
-        private static final int DEPENDENCIES_LIMIT = 30; // at most 30 dependencies
+        private static final int STARS_LIMIT = 0; // at least 100 stars
+        private static final int CONTRIBUTOR_LIMIT = 1; // at least 2 contributors
+        private static final int COMMITS_LIMIT = 0; // at least 100 commits
+        private static final int DEPENDENCIES_LIMIT = 100; // at most 30 dependencies
         private static final int FILES_LIMIT = 1000; // at most 1000 files
-        private static final List<String> DEPENDENCIES = List.of("org.apache.lucene:lucene-analyzers-common",
-                        "org.apache.lucene:lucene-core"); // can be left empty
 
         /**
          * Runs everything that is needed according to the chosen parameters in the
@@ -44,6 +42,8 @@ public class Application {
          * @throws InterruptedException
          */
         public static void main(String[] args) throws IllegalStateException, IOException, InterruptedException {
+                List<String> dependencies = List.of(args[0], args[1]);
+
                 log.info("Starting...");
                 long startTime = System.currentTimeMillis();
                 // Collect all Java GitHub repositories that use Maven and meet the limit
@@ -65,11 +65,11 @@ public class Application {
                 // declared dependencies and the dependencies limit and files limit
                 if (SELECT_REPOSITORIES) {
                         RepositoriesPicker.getMcrTagsOfDependenciesOfCollectedRepositories();
-                        RepositoriesPicker.selectRepositories(DEPENDENCIES, DEPENDENCIES_LIMIT, FILES_LIMIT);
+                        RepositoriesPicker.selectRepositories(dependencies, DEPENDENCIES_LIMIT, FILES_LIMIT);
                 }
                 // Parse the selected repositories
                 if (PARSE_REPOSITORIES) {
-                        Utils.readCSVFile(Utils.getSelectedRepositoriesFile(DEPENDENCIES))
+                        Utils.readCSVFile(Utils.getSelectedRepositoriesFile(dependencies))
                                         .forEach(repository -> parse(repository));
                 }
                 log.info("Successful.");
