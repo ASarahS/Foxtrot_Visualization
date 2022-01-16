@@ -1,8 +1,10 @@
 #!/bin/sh
 
-python -m venv ./env
+pip install venv #Optional
 
-source ./env/bin/activate
+python -m venv ./env #Optional
+
+source ./env/bin/activate #Optional
 
 pip install -r requirements.txt
 
