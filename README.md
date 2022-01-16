@@ -40,7 +40,7 @@ for running the visualization on arbitrary repositories:
 - FILES\_LIMIT = 1000 (was 1000)
 
 To recreate the exact visualizations of the original paper (5.12-5.14), run the
-script `process/example1.sh`. The HTML visualizations need to be viewed in a
+script `process/example1.sh`. Detailed steps for reproduction are defined in the Implementation Section. The HTML visualizations need to be viewed in a
 browser where one can drill down in to more detailed views. Clicking on the
 element with the name `LazyAncestryGeoNameTest` will show the element that is
 shown in the paper.
@@ -55,33 +55,48 @@ Screenshots for the Novetta/CLAVIN project are linked here
 The content of the visualizations is identical, there are only cosmetic
 differences like layout, font size and colors.
 
+
 ### **Implementation of replication**
 
 #### **Hardware and software requirements**
 Running this process requires no specific hardware or OS.
 
-Software Requirements
-- Java 11
-- Python
+**Software Requirements**
 
+**1. Java 11**: Can be set-up using these links: [MacOS](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-macos.html#GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE), [Windows](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-C11500A9-252C-46FE-BB17-FC5A9528EAEB)
+
+**2. Python**: [This link may be used](https://python.land/installing-python)
+
+
+#### **Project requirements**
+
+**1. Running the script** will install Python dependencies, create the required directories, compile and run the modified Java code, as well as run the
+updated Python analysis and visualization code. Clone the repository and run the following command in main directory:
+> sh process/example1.sh
+
+**Example Scripts**
 The repository contains some example scripts:
 - `process/example1.sh` runs the process for [Novetta/CLAVIN](https://github.com/Novetta/CLAVIN)
 - `process/example2.sh` runs the process for [garbagemule/MobArena](https://github.com/garbagemule/MobArena)
 - `process/example3.sh` runs the process for [dashorst/dashboard](https://github.com/dashorst/dashboard)
 
-Running the scripts will install Python dependencies, create the required
-directories, compile and run the modified Java code, as well as running the
-updated Python analysis and visualization code.
+**2. Optional**
+- Running the script starts a python virtual environment by default. If you want to change this behavior, you can comment out the lines marked as 'Optional' in the process/run.sh file.
+- If you use python3 to run python files, this can also be edited in the process/run.sh file
+
+**3. Running project for other data**
 
 One can run the process on any other applicable Java GitHub repository using the
 following command:
 
 > ./process/run.sh <repository> <dependency1> <dependency2>
 
-#### **Validation**
+
+### **Validation**
 Check the output in the `data/output/visualization` directory.
 
-#### **Data**
+  
+### **Data**
 Some input files are present in our repostory, but deleting the `data` folder
 and recreating them will also work.
 
@@ -110,6 +125,6 @@ and recreating them will also work.
 | Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrTags\_with\_dep.html`       |
 | Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrTags\_with\_dep.pdf`        |
 
-The placeholder <repository> is replace by whatever repository one is analyzing.
+The placeholder <repository> is replaced by whatever repository one is analyzing.
 The repository of the main running example is Novetta/CLAVIN, which means
-<placeholder> is replace with `Novetta_CLAVIN`.
+<placeholder> is replaced with `Novetta_CLAVIN`.
