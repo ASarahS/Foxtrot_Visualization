@@ -58,10 +58,9 @@ differences like layout, font size and colors.
 
 ### **Implementation of replication**
 
-#### **Hardware and software requirements**
 Running this process requires no specific hardware or OS.
 
-**Software Requirements**
+#### **Software Requirements**
 
 **1. Java 11**: Can be set-up using these links: [MacOS](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-macos.html#GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE), [Windows](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-C11500A9-252C-46FE-BB17-FC5A9528EAEB)
 
