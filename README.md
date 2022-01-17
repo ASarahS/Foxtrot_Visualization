@@ -88,7 +88,7 @@ The repository contains some example scripts:
 One can run the process on any other applicable Java GitHub repository using the
 following command:
 
-> ./process/run.sh \<repository}\> \<dependency1\> \<dependency2\>
+> ./process/run.sh \<repository\> \<dependency1\> \<dependency2\>
 
 
 ### **Validation**
