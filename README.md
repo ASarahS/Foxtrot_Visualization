@@ -37,7 +37,7 @@ for running the visualization on arbitrary repositories:
 - CONTRIBUTOR\_LIMIT = 1 (was 2)
 - COMMITS\_LIMIT = 0 (was 100)
 - DEPENDENCIES\_LIMIT = 100 (was 30)
-- FILES\_LIMIT = 1000 (was 1000)
+- FILES\_LIMIT = 1001 (was 1000)
 
 To recreate the exact visualizations of the original paper (5.12-5.14), run the
 script `process/example1.sh`. Detailed steps for reproduction are defined in the Implementation Section. The HTML visualizations need to be viewed in a
@@ -88,41 +88,41 @@ The repository contains some example scripts:
 One can run the process on any other applicable Java GitHub repository using the
 following command:
 
-> ./process/run.sh <repository> <dependency1> <dependency2>
+> ./process/run.sh \<repository}\> \<dependency1\> \<dependency2\>
 
 
 ### **Validation**
 Check the output in the `data/output/visualization` directory.
 
-  
+
 ### **Data**
 Some input files are present in our repostory, but deleting the `data` folder
 and recreating them will also work.
 
 | Type      | File                                                                                           |
 |:--------- |:---------------------------------------------------------------------------------------------- |
-| Input     | `data/input/data/data\_<repository>.csv`                                                       |
-| Input     | `data/input/analyzed\_data/class/api\_proportion\_class\_<repository>.csv`                     |
-| Input     | `data/input/analyzed\_data/method/api\_proportion\_method<repository>.csv`                     |
-| Input     | `data/input/analyzed\_data/package/api\_proportion\_package<repository>.csv`                   |
-| Input     | `data/input/analyzed\_data/class/api\_sets_<repository>.csv`                                   |
-| Input     | `data/input/analyzed\_data/method/api\_sets_<repository>.csv`                                  |
-| Input     | `data/input/analyzed\_data/package/api\_sets\_<repository>.csv`                                |
-| Temporary | `data/input/characterization/characterization\_<repository>\_api.csv`                          |
-| Temporary | `data/input/characterization/characterization\_<repository>\_mcrCategories.csv`                |
-| Temporary | `data/input/characterization/characterization\_<repository>\_mcrCategories\_with\_dep.csv`     |
-| Temporary | `data/input/characterization/characterization\_<repository>\_mcrTags.csv`                      |
-| Temporary | `data/input/characterization/characterization\_<repository>\_mcrTags\_with\_dep.csv`           |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_api.html`                      |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_api.pdf`                       |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrCategories.html`            |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrCategories.pdf`             |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrCategories\_with\_dep.htm`l |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrCategories\_with\_dep.pdf`  |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrTags.html`                  |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrTags.pdf`                   |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrTags\_with\_dep.html`       |
-| Output    | `data/output/visualization/visualization\_<repository>\_method\_mcrTags\_with\_dep.pdf`        |
+| Input     | `data/input/data/data_<repository>.csv`                                                        |
+| Input     | `data/input/analyzed_data/class/api_proportion_class_<repository>.csv`                         |
+| Input     | `data/input/analyzed_data/method/api_proportion_method<repository>.csv`                        |
+| Input     | `data/input/analyzed_data/package/api_proportion_package<repository>.csv`                      |
+| Input     | `data/input/analyzed_data/class/api_sets_<repository>.csv`                                     |
+| Input     | `data/input/analyzed_data/method/api_sets_<repository>.csv`                                    |
+| Input     | `data/input/analyzed_data/package/api_sets_<repository>.csv`                                   |
+| Temporary | `data/input/characterization/characterization_<repository>_api.csv`                            |
+| Temporary | `data/input/characterization/characterization_<repository>_mcrCategories.csv`                  |
+| Temporary | `data/input/characterization/characterization_<repository>_mcrCategories_with_dep.csv`         |
+| Temporary | `data/input/characterization/characterization_<repository>_mcrTags.csv`                        |
+| Temporary | `data/input/characterization/characterization_<repository>_mcrTags_with_dep.csv`               |
+| Output    | `data/output/visualization/visualization_<repository>_method_api.html`                         |
+| Output    | `data/output/visualization/visualization_<repository>_method_api.pdf`                          |
+| Output    | `data/output/visualization/visualization_<repository>_method_mcrCategories.html`               |
+| Output    | `data/output/visualization/visualization_<repository>_method_mcrCategories.pdf`                |
+| Output    | `data/output/visualization/visualization_<repository>_method_mcrCategories_with_dep.html`      |
+| Output    | `data/output/visualization/visualization_<repository>_method_mcrCategories_with_dep.pdf`       |
+| Output    | `data/output/visualization/visualization_<repository>_method_mcrTags.html`                     |
+| Output    | `data/output/visualization/visualization_<repository>_method_mcrTags.pdf`                      |
+| Output    | `data/output/visualization/visualization_<repository>_method_mcrTags_with_dep.html`            |
+| Output    | `data/output/visualization/visualization_<repository>_method_mcrTags_with_dep.pdf`             |
 
 The placeholder <repository> is replaced by whatever repository one is analyzing.
 The repository of the main running example is Novetta/CLAVIN, which means
