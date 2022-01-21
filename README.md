@@ -127,3 +127,12 @@ and recreating them will also work.
 The placeholder <repository> is replaced by whatever repository one is analyzing.
 The repository of the main running example is Novetta/CLAVIN, which means
 <placeholder> is replaced with `Novetta_CLAVIN`.
+
+## Additional work
+
+To make use of another team's output, we chose to generate some visualizations
+from the repositories collected by team Romeo. The data we used can be found in
+`data/repositories_with_dependencies_romeo.csv`. Some of the resulting class map
+can be found in the `data/visualizations` directory. To make this work, the
+script `process/romeo.sh` reads the input file and executes our process on some
+random collected projects.
